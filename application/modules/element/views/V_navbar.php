@@ -24,10 +24,12 @@
             <li><a href="<?php echo base_url();?>user/C_user" class="dropdown-item">User</a></li>
             <li><a href="<?php echo base_url();?>mMenu/C_menu" class="dropdown-item">Menu</a></li>
             <li><a href="<?php echo base_url();?>user/C_user" class="dropdown-item">Access</a></li>
+            <li><a href="<?php echo base_url();?>user/C_user" class="dropdown-item">Barang</a></li>
+            <li><a href="<?php echo base_url();?>mSatuan/C_satuan" class="dropdown-item">Satuan</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
-            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">HRM/GA-HSE</a>
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Production</a>
             <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
               <li class="dropdown-submenu dropdown-hover">
                 <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">HRM</a>
@@ -39,6 +41,9 @@
               </li>
             </ul>
           </li>
+          <li class="nav-item dropdown">
+            <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Report</a>
+        </li>
       </ul>
 
       <!-- SEARCH FORM -->

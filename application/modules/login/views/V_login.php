@@ -23,7 +23,7 @@
 <div class="login-box">
   <div class="login-logo">
     <a href="<?php echo base_url();?>">
-      <img src="<?php echo base_url();?>assets/image/bbmmp.png">
+      <img src="<?php echo base_url();?>assets/image/logo.png">
       <br/>
       <b>Web</b> <a style="font-size: 24px;">Information System</a>
     </a>
@@ -31,11 +31,11 @@
   <!-- /.login-logo -->
   <div class="card">
     <div class="card-body login-card-body">
-      <p class="login-box-msg">Sign in to start your session</p>
+      <p class="login-box-msg">Sign in</p>
 
       <!-- <form action="" method="post"> -->
         <div class="input-group mb-3">
-          <input type="text" class="form-control" id="inId" placeholder="No ID" autofocus>
+          <input type="text" class="form-control" id="inId" placeholder="ID" autofocus>
           <div class="input-group-append">
             <div class="input-group-text">
               <span class="fas fa-id-card"></span>

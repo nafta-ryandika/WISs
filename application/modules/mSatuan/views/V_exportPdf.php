@@ -72,15 +72,8 @@
         </style>
     </head>
     <body>
-        <header>
-            test
-        </header>
-        <!-- <footer>
-            footer
-        </footer> -->
-
         <div style="text-align:center">
-            <h3> Laporan PDF Toko Kita</h3>
+            <h3>Report Data Master User</h3>
         </div>
         <table class="table table-bordered table-striped">
             <thead>
@@ -97,23 +90,6 @@
             </thead>
             <tbody>
             <?php
-                $i = 0;
-                foreach($data as $row){
-                    $i++;
-                    echo '<tr>';
-                    echo '<td style="text-align: center;">'.$i.'</td>';
-                    echo '<td style="text-align: center;">'.$row->user_id.'</td>';
-                    echo '<td>'.$row->user_name.'</td>';
-                    echo '<td>'.$row->user_email.'</td>';
-                    echo '<td>'.$row->user_department.'</td>';
-                    echo '<td>'.$row->user_division.'</td>';
-                    echo '<td>'.$row->user_level.'</td>';
-                    echo '<td style="text-align: center;">'.$row->user_created_at.'</td>';
-                    echo '</tr>';
-                }
-            ?>
-
-<?php
                 $i = 0;
                 foreach($data as $row){
                     $i++;

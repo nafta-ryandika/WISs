@@ -21,15 +21,12 @@
   <div class="content" style="height: 100%; min-height: 359px;">
     <div class="container-fluid">
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-lg-12">
           <div class="card card-primary card-outline">
             <div class="card-header">
-              <h5 class="card-title m-0">Featured</h5>
+              <h5 class="card-title m-0">Welcome</h5>
             </div>
             <div class="card-body">
-              <h6 class="card-title">Born Day</h6>
-
-              <p class="card-text">The system was born - 01/11/2022</p>
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>

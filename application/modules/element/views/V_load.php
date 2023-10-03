@@ -6,9 +6,9 @@
       <script src="<?php echo base_url();?>assets/javascript/user/User.js?version=<?php echo $xyz;?>"></script>
     <?php
   }
-  else if ($data == 'getDataAbsensi'){
+  else if ($data == 'mSatuan'){
     ?>
-      <script src="<?php echo base_url();?>assets/javascript/getDataAbsensi/getDataAbsensi.js?version=<?php echo $xyz;?>"></script>
+      <script src="<?php echo base_url();?>assets/javascript/mSatuan/mSatuan.js?version=<?php echo $xyz;?>"></script>
     <?php
   }
   else if ($data == 'menu'){
