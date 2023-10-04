@@ -23,7 +23,7 @@
 <div class="login-box">
   <div class="login-logo">
     <a href="<?php echo base_url();?>">
-      <img src="<?php echo base_url();?>assets/image/logo.png">
+      <img src="<?php echo base_url();?>assets/image/logo-md.png">
       <br/>
       <b>Web</b> <a style="font-size: 24px;">Information System</a>
     </a>

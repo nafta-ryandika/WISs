@@ -121,11 +121,8 @@ class M_satuan extends CI_model {
 	}
 
 	public function export(){
-		$this->db->select("*,
-						(SELECT department_name FROM m_department WHERE department_id = user_department_id) AS user_department,
-						(SELECT division_name FROM m_division WHERE division_id = user_division_id) AS user_division,
-						(SELECT level_name FROM m_level WHERE level_id = user_level_id) AS user_level");
-		$this->db->from("m_user");		
+		$this->db->select("*");
+		$this->db->from("m_satuan");		
 		$query = $this->db->get();
 		$data = $query->row();
 

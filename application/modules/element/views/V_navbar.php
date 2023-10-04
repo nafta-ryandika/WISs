@@ -5,7 +5,7 @@
       <span class="brand-text font-weight-light">HR Department</span>
     </a> -->
     <a href="<?php echo base_url();?>dashboard/C_dashboard">
-      <!-- <img src="<?php echo base_url();?>assets/image/bbmmp.png" style="height: 25px; width: auto;"> -->
+      <img src="<?php echo base_url();?>assets/image/logo-sm.png" style="height: 25px; width: auto;">
     </a>
 
     <button class="navbar-toggler order-1" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,20 +22,21 @@
           <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Master</a>
           <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
             <li><a href="<?php echo base_url();?>user/C_user" class="dropdown-item">User</a></li>
-            <li><a href="<?php echo base_url();?>mMenu/C_menu" class="dropdown-item">Menu</a></li>
-            <li><a href="<?php echo base_url();?>user/C_user" class="dropdown-item">Access</a></li>
-            <li><a href="<?php echo base_url();?>user/C_user" class="dropdown-item">Barang</a></li>
-            <li><a href="<?php echo base_url();?>mSatuan/C_satuan" class="dropdown-item">Satuan</a></li>
+            <!-- <li><a href="<?php echo base_url();?>mMenu/C_menu" class="dropdown-item">Menu</a></li> -->
+            <!-- <li><a href="<?php echo base_url();?>user/C_user" class="dropdown-item">Access</a></li> -->
           </ul>
         </li>
         <li class="nav-item dropdown">
             <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Production</a>
             <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
               <li class="dropdown-submenu dropdown-hover">
-                <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">HRM</a>
+                <a id="dropdownSubMenu2" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-item dropdown-toggle">Master</a>
                 <ul aria-labelledby="dropdownSubMenu2" class="dropdown-menu border-0 shadow">
                   <li>
-                    <a tabindex="-1" class="dropdown-item" href="<?php echo base_url();?>getDataAbsensi/C_getDataAbsensi">Get Data Absensi</a>
+                    <a tabindex="-1" class="dropdown-item" href="<?php echo base_url();?>mKerja/C_kerja">Pekerjaaan</a>
+                  </li>
+                  <li>
+                    <a tabindex="-1" class="dropdown-item" href="<?php echo base_url();?>mSatuan/C_satuan">Satuan</a>
                   </li>
                 </ul>
               </li>
@@ -47,7 +48,7 @@
       </ul>
 
       <!-- SEARCH FORM -->
-      <form class="form-inline ml-0 ml-md-3">
+      <!-- <form class="form-inline ml-0 ml-md-3">
         <div class="input-group input-group-sm">
           <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
           <div class="input-group-append">
@@ -56,7 +57,7 @@
             </button>
           </div>
         </div>
-      </form>
+      </form> -->
     </div>
 
     <!-- Right navbar links -->
