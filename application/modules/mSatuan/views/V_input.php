@@ -56,7 +56,7 @@ $(document).ready(function(){
 		errorElement: 'span',
 		errorPlacement: function (error, element) {
 		  error.addClass('invalid-feedback');
-		  element.closest('.col-6').append(error);
+		  element.closest('.col-3').append(error);
 		},
 		highlight: function (element, errorClass, validClass) {
 		  $(element).addClass('is-invalid');

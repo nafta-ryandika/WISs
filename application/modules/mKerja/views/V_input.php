@@ -1,23 +1,39 @@
 <?php
   if ($inMode == "edit") {
-    echo '<span id="txtSatuanId" style="display : none;">'.$inSatuanId.'</span>';
-    echo '<span id="txtSatuanName" style="display : none;">'.$inSatuanName.'</span>';
+    echo '<span id="txtKerjaId" style="display : none;">'.$inKerjaId.'</span>';
+    echo '<span id="txtKerjaName" style="display : none;">'.$inKerjaName.'</span>';
+    echo '<span id="txtKerjaPrice" style="display : none;">'.$inKerjaPrice.'</span>';
+    echo '<span id="txtKerjaSatuanId" style="display : none;">'.$inKerjaSatuanId.'</span>';
   }
 ?>
 
-<form id="formSatuan">
+<form id="formKerja">
   <input type="hidden" id="inMode" value="<?=$inMode?>" disabled>
   <div class="row">
     <div class="col-3">
-      <label for="id">Satuan ID</label>
-      <input type="text" name="inSatuanId" class="form-control" id="inSatuanId" placeholder="">
+      <label for="id">ID Pekerjaan</label>
+      <input type="text" name="inKerjaId" class="form-control" id="inKerjaId" placeholder="">
     </div>
   </div>
   <br/>
   <div class="row">
     <div class="col-3">
-      <label for="id">Satuan Name</label>
-      <input type="text" name="inSatuanName" class="form-control" id="inSatuanName" placeholder="">
+      <label for="id">Pekerjaan</label>
+      <input type="text" name="inKerjaName" class="form-control" id="inKerjaName" placeholder="">
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-3">
+      <label for="id">Harga</label>
+      <input type="text" name="inKerjaPrice" class="form-control" id="inKerjaPrice" placeholder="">
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-3">
+      <label for="id">Satuan</label>
+      <input type="text" name="inKerjaSatuanId" class="form-control" id="inKerjaSatuanId" placeholder="">
     </div>
   </div>
   <br/>
@@ -36,27 +52,39 @@
 
 <script type="text/javascript">
 $(document).ready(function(){
-  $('#formSatuan').validate({
+  $('#formKerja').validate({
 		rules: {
-			inSatuanId: {
+			inKerjaId: {
 				required: true,
 			},
-      inSatuanName: {
+      inKerjaName: {
+				required: true,
+			},
+      inKerjaPrice: {
+				required: true,
+			},
+      inKerjaSatuanId: {
 				required: true,
 			}
 		},
 		messages: {
-			inSatuanId: {
-				required: "Please enter Satuan ID"
+			inKerjaId: {
+				required: "Please enter ID Pekerjaan"
 			},
-			inSatuanName: {
-				required: "Please enter Satuan Name"
+			inKerjaName: {
+				required: "Please enter Pekerjaan"
+			},
+			inKerjaPrice: {
+				required: "Please enter Harga"
+			},
+			inKerjaSatuanId: {
+				required: "Please enter Satuan"
 			}
 		},
 		errorElement: 'span',
 		errorPlacement: function (error, element) {
 		  error.addClass('invalid-feedback');
-		  element.closest('.col-6').append(error);
+		  element.closest('.col-3').append(error);
 		},
 		highlight: function (element, errorClass, validClass) {
 		  $(element).addClass('is-invalid');
@@ -67,18 +95,22 @@ $(document).ready(function(){
 	});
 
 	$('#btnSave').on('click', function(){
-		if($("#formSatuan").valid()){
+		if($("#formKerja").valid()){
       var inMode = $('#inMode').val();
-      var inSatuanId = $('#inSatuanId').val();
-      var inSatuanName = $('#inSatuanName').val();
+      var inKerjaId = $('#inKerjaId').val();
+      var inKerjaName = $('#inKerjaName').val();
+      var inKerjaPrice = $('#inKerjaPrice').val();
+      var inKerjaSatuanId = $('#inKerjaSatuanId').val();
       
       $.ajax({
         type: 'POST',
-        url: base_url+'mSatuan/C_satuan/addSatuan',
+        url: base_url+'mKerja/C_kerja/addKerja',
         data: {
                 inMode:inMode,
-                inSatuanId:inSatuanId, 
-                inSatuanName: inSatuanName
+                inKerjaId:inKerjaId, 
+                inKerjaName: inKerjaName,
+                inKerjaPrice: inKerjaPrice,
+                inKerjaSatuanId: inKerjaSatuanId,
               },
         cache: false,
         dataType: 'JSON',
@@ -87,7 +119,7 @@ $(document).ready(function(){
           if (data.res == "success") {
               alertify.success('Success');
               setTimeout(function(){
-                window.location.href = base_url+'mSatuan/C_satuan';
+                window.location.href = base_url+'mKerja/C_kerja';
               }, 500); 
               // window.location.href = base_url+'user/C_user';
           }
@@ -100,13 +132,15 @@ $(document).ready(function(){
 	})
 
   $('#btnCancel').on('click', function(){
-    window.location.href = base_url+'mSatuan/C_satuan'
+    window.location.href = base_url+'mKerja/C_kerja'
   })
 
   var inMode = $("#inMode").val();
   if(inMode == "edit"){
-    $("#inSatuanId").val($("#txtSatuanId").text());
-    $("#inSatuanName").val($("#txtSatuanName").text());
+    $("#inKerjaId").val($("#txtKerjaId").text());
+    $("#inKerjaName").val($("#txtKerjaName").text());
+    $("#inKerjaPrice").val($("#txtKerjaPrice").text());
+    $("#inKerjaSatuanId").val($("#txtKerjaSatuanId").text());
 
     validateInput();
   }

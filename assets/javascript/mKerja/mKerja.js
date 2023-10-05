@@ -11,7 +11,7 @@ $(document).ready(function(){
 		var inDatatablesParameter = $('.dataTables_filter input').val();
 		
 		// if (inModalType == 'pdf') {
-			var url = base_url+"mSatuan/C_satuan/export?inModalType="+inModalType+"&inDatatablesParameter="+inDatatablesParameter+"";
+			var url = base_url+"mKerja/C_kerja/export?inModalType="+inModalType+"&inDatatablesParameter="+inDatatablesParameter+"";
 			window.open(url, '_blank');	
 		// }
 		// else if
@@ -48,12 +48,12 @@ $(document).ready(function(){
 function viewData() {
 	$.ajax({
 		type: "POST",
-		url: base_url+"mSatuan/C_satuan/viewData",
+		url: base_url+"mKerja/C_kerja/viewData",
 		cache: false,
 		success: function (data) {
-			$('.contentSatuan').html(data);
+			$('.contentKerja').html(data);
 			$(function () {
-				$("#tableSatuan").DataTable();
+				$("#tableKerja").DataTable();
 			})
 		}
 	});
@@ -62,7 +62,7 @@ function viewData() {
 function viewInput(inMode) {
 	$.ajax({
 		type: "POST",
-		url: base_url+"mSatuan/C_satuan/viewInput",
+		url: base_url+"mKerja/C_kerja/viewInput",
 		data: "inMode="+inMode,
 		cache: false,
 		success: function (data) {
@@ -74,30 +74,36 @@ function viewInput(inMode) {
 
 function editData(idx) {
 	var inMode = "edit";
-	var inSatuanId = "";
-	var inSatuanName = "";
+	var inKerjaId = "";
+	var inKerjaName = "";
+	var inKerjaPrice = "";
+	var inKerjaSatuanId = "";
 	
 	$.ajax({
 		type: "POST",
-		url: base_url+"mSatuan/C_satuan/getSatuan",
-		data: {inSatuanId : idx},
+		url: base_url+"mKerja/C_kerja/getKerja",
+		data: {inKerjaId : idx},
 		cache: false,
 		dataType: "json",
 		async: false,
 		success: function (data) {
 			var i;
 			for (i=0; i<data.length; i++) {
-				inSatuanId = data[i].satuan_id;
-				inSatuanName = data[i].satuan_name;
+				inKerjaId = data[i].kerja_id;
+				inKerjaName = data[i].kerja_name;
+				inKerjaPrice = data[i].kerja_price;
+				inKerjaSatuanId = data[i].kerja_satuan_id;
 			}
 		}
 	}).done(function () {
 		$.ajax({
 			type: "POST",
-			url: base_url+"mSatuan/C_satuan/viewInput",
+			url: base_url+"mKerja/C_kerja/viewInput",
 			data: "inMode="+inMode+
-				  "&inSatuanId="+inSatuanId+
-				  "&inSatuanName="+inSatuanName,
+				  "&inKerjaId="+inKerjaId+
+				  "&inKerjaName="+inKerjaName+
+				  "&inKerjaPrice="+inKerjaPrice+
+				  "&inKerjaSatuanId="+inKerjaSatuanId,
 			cache: false,
 			success: function (data) {
 				$('.card-body').html(data);
@@ -118,9 +124,9 @@ function deleteData(idx) {
 		if (result.isConfirmed) {
 			$.ajax({
 				type: 'POST',
-				url: base_url+'mSatuan/C_satuan/deleteSatuan',
+				url: base_url+'mKerja/C_kerja/deleteKerja',
 				data: {
-						inSatuanId:idx
+						inKerjaId:idx
 					  },
 				cache: false,
 				dataType: 'JSON',

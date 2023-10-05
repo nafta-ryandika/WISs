@@ -17,10 +17,10 @@ class M_kerja extends CI_model {
 		}
 	}
 
-	public function addSatuan($inMode,$inSatuanId,$inSatuanName){
-		$this->db->select("satuan_id");
-		$this->db->from("m_satuan");
-		$this->db->where("satuan_id", $inSatuanId);
+	public function addKerja($inMode,$inKerjaId,$inKerjaName,$inKerjaPrice,$inKerjaSatuanId){
+		$this->db->select("kerja_id");
+		$this->db->from("m_kerja");
+		$this->db->where("kerja_id", $inKerjaId);
 
 		$query = $this->db->get();
 		$row  = $query->num_rows();
@@ -29,16 +29,18 @@ class M_kerja extends CI_model {
 		if ($row > 0) {
 			if ($inMode == 'edit') {
 				$data = array(
-					'satuan_name' => $inSatuanName,
-					'satuan_created_by' => $this->session->userdata['user_name'],
-					'satuan_created_at' => date("Y-m-d H:i:s")
+					'kerja_name' => $inKerjaName,
+					'kerja_price' => $inKerjaPrice,
+					'kerja_satuan_id' => $inKerjaSatuanId,
+					'kerja_created_by' => $this->session->userdata['user_name'],
+					'kerja_created_at' => date("Y-m-d H:i:s")
 				);
 
 				$this->db->db_debug = false;
 
-				$this->db->where("satuan_id", $inSatuanId);
+				$this->db->where("kerja_id", $inKerjaId);
 
-				if($this->db->update("m_satuan",$data)){
+				if($this->db->update("m_kerja",$data)){
 					$res['res'] = 'success';
 				}
 				else {
@@ -47,21 +49,23 @@ class M_kerja extends CI_model {
 				}
 			}
 			else { 
-				$res['res'] = 'Satuan ID number already exists';
+				$res['res'] = 'ID Pekerjaan already exists';
 			// return FALSE;
 			}
 		}
 		else {
 			if ($inMode == 'add') {
 				$data = array(
-					'satuan_id' => $inSatuanId,
-					'satuan_name' => $inSatuanName,
-					'satuan_created_by' => $this->session->userdata['user_name'],
+					'kerja_id' => $inKerjaId,
+					'kerja_name' => $inKerjaName,
+					'kerja_price' => $inKerjaPrice,
+					'kerja_satuan_id' => $inKerjaSatuanId,
+					'kerja_created_by' => $this->session->userdata['user_name'],
 				);
 
 				$this->db->db_debug = false;
 
-				if($this->db->insert('m_satuan', $data)){
+				if($this->db->insert('m_kerja', $data)){
 					$res['res'] = 'success';
 				}
 				else {
@@ -74,10 +78,10 @@ class M_kerja extends CI_model {
 		echo json_encode($res);
 	}
 
-	public function getSatuan($inSatuanId){
+	public function getKerja($inKerjaId){
 		$this->db->select("*");
-		$this->db->from("m_satuan");
-		$this->db->where("satuan_id", $inSatuanId);
+		$this->db->from("m_kerja");
+		$this->db->where("kerja_id", $inKerjaId);
 		$query = $this->db->get();
 		$data = $query->row();
 
@@ -89,13 +93,13 @@ class M_kerja extends CI_model {
 		}
 	}
 
-	public function deleteSatuan($inSatuanId){
+	public function deleteKerja($inKerjaId){
 		$res = array();
 
 		$this->db->db_debug = false;
-		$this->db->where('satuan_id', $inSatuanId);
+		$this->db->where('kerja_id', $inKerjaId);
 
-		if($this->db->delete('m_satuan')){
+		if($this->db->delete('m_kerja')){
 			$res['res'] = 'success';
 		}
 		else {
@@ -122,7 +126,7 @@ class M_kerja extends CI_model {
 
 	public function export(){
 		$this->db->select("*");
-		$this->db->from("m_satuan");		
+		$this->db->from("m_kerja");		
 		$query = $this->db->get();
 		$data = $query->row();
 

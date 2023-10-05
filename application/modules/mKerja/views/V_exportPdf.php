@@ -72,8 +72,10 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Satuan ID</th>
-                    <th>Satuan Name</th>
+                    <th>ID Pekerjaan</th>
+                    <th>Pekerjaan</th>
+                    <th>Harga</th>
+                    <th>Satuan</th>
                     <th>Created By</th>
                     <th>Created At</th>
                 </tr>
@@ -85,10 +87,12 @@
                     $i++;
                     echo '<tr>';
                         echo '<td style="text-align: center;">'.$i.'</td>';
-                        echo '<td style="text-align: center;">'.$row->satuan_id.'</td>';
-                        echo '<td style="text-align: center;">'.$row->satuan_name.'</td>';
-                        echo '<td style="text-align: center;">'.$row->satuan_created_by.'</td>';
-                        echo '<td style="text-align: center;">'.$row->satuan_created_at.'</td>';
+                        echo '<td style="text-align: center;">'.$row->kerja_id.'</td>';
+                        echo '<td style="text-align: center;">'.$row->kerja_name.'</td>';
+                        echo '<td style="text-align: center;">'.$row->kerja_price.'</td>';
+                        echo '<td style="text-align: center;">'.$row->kerja_satuan_id.'</td>';
+                        echo '<td style="text-align: center;">'.$row->kerja_created_by.'</td>';
+                        echo '<td style="text-align: center;">'.$row->kerja_created_at.'</td>';
                     echo '</tr>';
                 }
             ?>
