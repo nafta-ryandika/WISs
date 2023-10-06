@@ -40,7 +40,7 @@
                   </li>
                 </ul>
               </li>
-              <li><a href="<?php echo base_url();?>user/C_user" class="dropdown-item">Count</a></li>
+              <li><a href="<?php echo base_url();?>transaction/C_transaction" class="dropdown-item">Transaction</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

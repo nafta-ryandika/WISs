@@ -16,6 +16,11 @@
       <script src="<?php echo base_url();?>assets/javascript/mKerja/mKerja.js?version=<?php echo $xyz;?>"></script>
     <?php
   }
+  else if ($data == 'transaction'){
+    ?>
+      <script src="<?php echo base_url();?>assets/javascript/transaction/transaction.js?version=<?php echo $xyz;?>"></script>
+    <?php
+  }
   else if ($data == 'menu'){
     ?>
       <script src="<?php echo base_url();?>assets/javascript/mMenu/mMenu.js?version=<?php echo $xyz;?>"></script>

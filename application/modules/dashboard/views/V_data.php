@@ -32,45 +32,6 @@
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-lg-2 col-8">
-          <a href="<?php echo base_url();?>getDataAbsensi/C_getDataAbsensi">
-            <div class="small-box bg-success">
-              <div class="inner" style="min-height: 120px;">
-                <h3>Get Data</h3>
-                <h4>Absensi</h4>  
-              </div>
-              <div class="icon">
-                <i class="fas fa-user-plus"></i>
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="col-lg-2 col-8">
-          <a href="http://192.168.10.167/HRD/absCsv/" target="_blank">
-            <div class="small-box bg-info">
-            <div class="inner" style="min-height: 120px;">
-              <h3>*.csv</h3>
-            </div>
-            <div class="icon">
-              <i class="fas fa-file-csv"></i>
-            </div>
-          </div>
-          </a>
-        </div>
-        <div class="col-lg-2 col-8">
-          <a href="http://192.168.10.167/HRD/absManual/" target="_blank">
-            <div class="small-box bg-success">
-              <div class="inner" style="min-height: 120px;">
-                <h3>Abs. Manual</h3>
-              </div>
-              <div class="icon">
-                <i class="fas fa-user-plus"></i>
-              </div>
-            </div>
-          </a>
-        </div>
-      </div>
       <!-- <div class="row"> -->
         
         <!-- /.col-md-6 -->
