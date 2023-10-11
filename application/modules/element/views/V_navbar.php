@@ -41,6 +41,7 @@
                 </ul>
               </li>
               <li><a href="<?php echo base_url();?>transaction/C_transaction" class="dropdown-item">Transaction</a></li>
+              <li><a href="<?php echo base_url();?>recTransaction/C_recTransaction" class="dropdown-item" onclick="openFullscreen();">Rec. Transaction</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Web Information system</title>
-  <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/image/bbmmp-square.png">
+  <title>Web Information System</title>
+  <link rel="icon" type="image/png" href="<?php echo base_url();?>assets/image/logo-sm.png">
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -21,6 +21,7 @@
   <!-- AlertifyJS -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/AlertifyJS/build/css/alertify.min.css" />
   <link rel="stylesheet" href="<?php echo base_url();?>assets/AlertifyJS/build/css/themes/default.min.css" />
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/fontawesome 6.4.2/css/all.min.css" />
   <script type="text/javascript">
     var base_url = "<?php echo base_url();?>";
   </script>

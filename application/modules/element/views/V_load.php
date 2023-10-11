@@ -21,6 +21,11 @@
       <script src="<?php echo base_url();?>assets/javascript/transaction/transaction.js?version=<?php echo $xyz;?>"></script>
     <?php
   }
+  else if ($data == 'recTransaction'){
+    ?>
+      <script src="<?php echo base_url();?>assets/javascript/recTransaction/recTransaction.js?version=<?php echo $xyz;?>"></script>
+    <?php
+  }
   else if ($data == 'menu'){
     ?>
       <script src="<?php echo base_url();?>assets/javascript/mMenu/mMenu.js?version=<?php echo $xyz;?>"></script>
