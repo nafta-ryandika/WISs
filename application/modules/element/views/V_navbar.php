@@ -38,14 +38,20 @@
                   <li>
                     <a tabindex="-1" class="dropdown-item" href="<?php echo base_url();?>mSatuan/C_satuan">Satuan</a>
                   </li>
+                  <li>
+                    <a tabindex="-1" class="dropdown-item" href="<?php echo base_url();?>mCardKerja/C_cardKerja">Card Pekerjaaan</a>
+                  </li>
                 </ul>
               </li>
-              <li><a href="<?php echo base_url();?>transaction/C_transaction" class="dropdown-item">Transaction</a></li>
-              <li><a href="<?php echo base_url();?>recTransaction/C_recTransaction" class="dropdown-item" onclick="openFullscreen();">Rec. Transaction</a></li>
+              <!-- <li><a href="<?php echo base_url();?>transaction/C_transaction" class="dropdown-item">Transaction</a></li> -->
+              <li><a href="<?php echo base_url();?>recTransaction/C_recTransaction" class="dropdown-item" onclick="openFullscreen();">Transaction</a></li>
             </ul>
           </li>
           <li class="nav-item dropdown">
             <a id="dropdownSubMenu1" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle">Report</a>
+            <ul aria-labelledby="dropdownSubMenu1" class="dropdown-menu border-0 shadow">
+              <li><a href="<?php echo base_url();?>rTransaction/C_rTransaction" class="dropdown-item">Transaction</a></li>
+            </ul>
         </li>
       </ul>
 
@@ -65,13 +71,13 @@
     <!-- Right navbar links -->
     <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
       <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
+      <!-- <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-bell"></i>
           <span class="badge badge-warning navbar-badge">0</span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-header">0 Notifications</span>
+          <span class="dropdown-header">0 Notifications</span> -->
           <!-- <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
             <i class="fas fa-envelope mr-2"></i> 4 new messages
@@ -87,10 +93,10 @@
             <i class="fas fa-file mr-2"></i> 3 new reports
             <span class="float-right text-muted text-sm">2 days</span>
           </a> -->
-          <div class="dropdown-divider"></div>
+          <!-- <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
-        </div>
-      </li>
+        </div> -->
+      <!-- </li> -->
 
       <!-- User Dropdown Menu -->
       <li class="nav-item dropdown">
@@ -99,9 +105,9 @@
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
+            <!-- <a href="#" class="dropdown-item">
               <i class="fas fa-id-card mr-2"></i><?php echo($this->session->userdata('user_id')); ?>
-            </a>
+            </a> -->
             <a href="#" class="dropdown-item">
               <i class="fas fa-user mr-2"></i><?php echo($this->session->userdata('user_name')); ?>
             </a>
