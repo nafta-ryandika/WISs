@@ -9,7 +9,9 @@
   <script src="<?php echo base_url();?>assets/AdminLTE/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="<?php echo base_url();?>assets/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-   <!-- DataTables  & Plugins -->
+   <!-- Select2 -->
+   <script src="<?php echo base_url();?>assets/AdminLTE/plugins/select2/js/select2.full.min.js"></script>
+  <!-- DataTables  & Plugins -->
   <script src="<?php echo base_url();?>assets/AdminLTE/plugins/datatables/jquery.dataTables.min.js"></script>
   <script src="<?php echo base_url();?>assets/AdminLTE/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
   <script src="<?php echo base_url();?>assets/AdminLTE/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
@@ -33,7 +35,17 @@
   <script src="<?php echo base_url();?>assets/AlertifyJS/build/alertify.min.js"></script>
   <!-- javascript -->
   <script src="<?php echo base_url();?>assets/javascript/dashboard/Dashboard.js"></script>
+  <!-- <script>
+  $(function () {
+    //Initialize Select2 Elements
+    $('.select2').select2()
 
+    //Initialize Select2 Elements
+    $('.select2bs4').select2({
+      theme: 'bootstrap4'
+    })
+  })
+</script> -->
 
 </body>
 </html>

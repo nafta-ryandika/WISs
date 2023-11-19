@@ -28,9 +28,15 @@
           <div class="card-header" id="btnArea">
               <div class="row">
                 <div class="col-1">
-                  <!-- <button type="button" class="btn btn-block btn-primary" id="btnAdd">Add</button> -->
+                  <button type="button" class="btn btn-block btn-primary" id="btnAdd">Add</button>
                 </div>
-                <div class="col-10">
+                <div class="col-1">
+                  <button type="button" class="btn btn-block btn-warning" id="btnAdd">Edit</button>
+                </div>
+                <div class="col-1">
+                  <button type="button" class="btn btn-block btn-danger" id="btnAdd">Delete</button>
+                </div>
+                <div class="col-8">
                 
                 </div>
                 <div class="col-1">

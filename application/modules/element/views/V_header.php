@@ -16,6 +16,9 @@
   <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
   <!-- icheck bootstrap -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE/plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/AdminLTE/dist/css/adminlte.min.css">
   <!-- AlertifyJS -->

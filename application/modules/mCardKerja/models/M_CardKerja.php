@@ -5,7 +5,7 @@ class M_cardKerja extends CI_model {
 	public function viewData(){		
 		$query = $this->db->query("SELECT * FROM 
 									(
-										SELECT id, id_kerja FROM m_card_kerja
+										SELECT id, id_kerja, card_status, card_start_date, card_end_date, card_log, created_by, created_at FROM m_card_kerja
 									)dt1
 									LEFT JOIN 
 									(

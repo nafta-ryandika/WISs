@@ -62,7 +62,7 @@ function viewData() {
 function viewInput(inMode) {
 	$.ajax({
 		type: "POST",
-		url: base_url+"mKerja/C_kerja/viewInput",
+		url: base_url+"mCardKerja/C_cardKerja/viewInput",
 		data: "inMode="+inMode,
 		cache: false,
 		success: function (data) {
