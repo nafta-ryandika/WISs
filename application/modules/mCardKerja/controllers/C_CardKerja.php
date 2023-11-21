@@ -44,6 +44,11 @@ class C_cardKerja extends CI_Controller {
 		$this->load->view('V_input',$data);
 	}
 
+	public function getListPekerjaan(){
+		$res = $this->M_cardKerja->getListPekerjaan();
+		echo json_encode($res);
+	}
+
 	public function addKerja(){
 		$inMode = $this->input->post('inMode');
 		$inKerjaId = $this->input->post('inKerjaId');

@@ -9,20 +9,21 @@
 
 <form id="formKerja">
   <input type="hidden" id="inMode" value="<?=$inMode?>" disabled>
+  <label for="pekerjaan">Pekerjaan</label>
   <div class="row">
     <div class="col-md-3">
-      <div class="form-group">
-        <label>Minimal</label>
-        <select class="form-control select2" style="width: 100%;">
-          <option selected="selected"> - </option>
-          <option>Alaska</option>
-          <option>California</option>
-          <option>Delaware</option>
-          <option>Tennessee</option>
-          <option>Texas</option>
-          <option>Washington</option>
-        </select>
-      </div>
+      <select class="form-control select2" id="inPekerjaan" style="width: 100%;">
+        <option selected="selected"> - </option>
+        <option>Alaska</option>
+        <option>California</option>
+        <option>Delaware</option>
+        <option>Tennessee</option>
+        <option>Texas</option>
+        <option>Washington</option>
+      </select>
+    </div>
+    <div class="col-md-1">
+      <button type="button" class="btn btn-block btn-success" id="btnAdd">Refresh</button>
     </div>
   </div>
   <div class="row">
@@ -31,28 +32,6 @@
       <textarea type="text" name="inKerjaId" class="form-control" id="inKerjaId" placeholder=""></textarea>
     </div>
   </div>
-  <br/>
-  <div class="row">
-    <div class="col-3">
-      <label for="id">Pekerjaan</label>
-      <input type="text" name="inKerjaName" class="form-control" id="inKerjaName" placeholder="">
-    </div>
-  </div>
-  <br/>
-  <div class="row">
-    <div class="col-3">
-      <label for="id">Harga</label>
-      <input type="text" name="inKerjaPrice" class="form-control" id="inKerjaPrice" placeholder="">
-    </div>
-  </div>
-  <br/>
-  <div class="row">
-    <div class="col-3">
-      <label for="id">Satuan</label>
-      <input type="text" name="inKerjaSatuanId" class="form-control" id="inKerjaSatuanId" placeholder="">
-    </div>
-  </div>
-  <br/>
   <!-- /.card-body -->
   <div class="card-footer row">
     <div class="col-5"></div>

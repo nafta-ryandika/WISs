@@ -149,4 +149,6 @@ class M_cardKerja extends CI_model {
 			return FALSE;
 		}
 	}
+
+	
 }
