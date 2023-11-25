@@ -67,9 +67,53 @@ function viewInput(inMode) {
 		cache: false,
 		success: function (data) {
 			$('.card-body').html(data);
+			$(function () {
+				$("#tableListCard").DataTable();
+			})
 			validateInput();
 		}
 	});
+}
+
+function getListPekerjaan(){
+	// var inPekerjaan = $('#inPekerjaan').val();
+
+	$.ajax({
+		type: 'POST',
+		url: base_url+"mCardKerja/C_cardKerja/getListPekerjaan",
+		// data:{inPekerjaan: inPekerjaan},
+		cache: false,
+		dataType: 'json',
+		success: function(data) {
+			var html = '<option selected="selected"> - </option>';
+			var i;
+
+			for (i=0; i<data.length; i++) {
+				html += '<option value="' + data[i].kerja_id + '">' + data[i].kerja_name + '</option>';
+			}
+
+			$('#inPekerjaan').html(html);
+		}
+	})
+}
+
+function getListCard(){
+	$.ajax({
+		type: 'POST',
+		url: base_url+"mCardKerja/C_cardKerja/getListCard",
+		cache: false,
+		dataType: 'json',
+		success: function(data) {
+			var html = '<option selected="selected"> - </option>';
+			var i;
+
+			for (i=0; i<data.length; i++) {
+				html += '<option value="' + data[i].kerja_id + '">' + data[i].kerja_name + '</option>';
+			}
+
+			$('#inPekerjaan').html(html);
+		}
+	})
 }
 
 function editData(idx) {

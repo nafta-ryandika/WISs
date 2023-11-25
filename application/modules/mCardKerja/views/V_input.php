@@ -13,23 +13,53 @@
   <div class="row">
     <div class="col-md-3">
       <select class="form-control select2" id="inPekerjaan" style="width: 100%;">
-        <option selected="selected"> - </option>
-        <option>Alaska</option>
-        <option>California</option>
-        <option>Delaware</option>
-        <option>Tennessee</option>
-        <option>Texas</option>
-        <option>Washington</option>
+        <?php
+          foreach ($pekerjaan as $data) {
+            echo '<option value="'.$data->kerja_id.'">'.$data->kerja_name.'</option>';
+          }
+        ?>
       </select>
     </div>
     <div class="col-md-1">
-      <button type="button" class="btn btn-block btn-success" id="btnAdd">Refresh</button>
+      <button type="button" class="btn btn-block btn-success" id="btnGetListCard">Get Data</button>
     </div>
   </div>
+  <br/>
+  <label for="pekerjaan">Active Date</label>
   <div class="row">
-    <div class="col-3">
-      <label for="id">ID Card</label>
-      <textarea type="text" name="inKerjaId" class="form-control" id="inKerjaId" placeholder=""></textarea>
+    <div class="col-md-3">
+      <div class="form-group">
+        <label>Date range:</label>
+
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text">
+              <i class="far fa-calendar-alt"></i>
+            </span>
+          </div>
+          <input type="text" class="form-control float-right" id="reservation">
+        </div>
+        <!-- /.input group -->
+      </div>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-md-12">
+      <table id="tableListCard" class="table table-bordered table-striped">
+        <thead style="text-align: center;">
+          <tr>
+            <th>Action</th>
+            <th>ID Card</th>
+            <th>Pekerjaan</th>
+            <th>Status</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+          </tr>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
     </div>
   </div>
   <!-- /.card-body -->
@@ -57,6 +87,16 @@
   })
   
 $(document).ready(function(){
+  getListPekerjaan();
+
+  $('#inPekerjaan').on('click', function(){
+    getListPekerjaan();
+  })
+
+  $('#btnGetListCard').on('click',function() {
+    getListCard();
+  })
+
   $('#formKerja').validate({
 		rules: {
 			inKerjaId: {

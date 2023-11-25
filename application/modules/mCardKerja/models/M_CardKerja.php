@@ -22,6 +22,18 @@ class M_cardKerja extends CI_model {
 		}
 	}
 
+	public function getListPekerjaan(){
+		$query = $this->db->query("SELECT kerja_id, kerja_name, kerja_price, kerja_satuan_id FROM m_kerja");
+		$data = $query->row();
+
+		if (!empty($data)) {
+			return $query->result();
+		} 
+		else {
+			return FALSE;
+		}
+	}
+
 	public function addKerja($inMode,$inKerjaId,$inKerjaName,$inKerjaPrice,$inKerjaSatuanId){
 		$this->db->select("kerja_id");
 		$this->db->from("m_kerja");
