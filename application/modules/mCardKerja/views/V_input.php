@@ -9,9 +9,10 @@
 
 <form id="formKerja">
   <input type="hidden" id="inMode" value="<?=$inMode?>" disabled>
-  <label for="pekerjaan">Pekerjaan</label>
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-4">
+    <div class="form-group">
+      <label for="pekerjaan">Pekerjaan</label>
       <select class="form-control select2" id="inPekerjaan" style="width: 100%;">
         <?php
           foreach ($pekerjaan as $data) {
@@ -20,32 +21,40 @@
         ?>
       </select>
     </div>
-    <div class="col-md-1">
-      <button type="button" class="btn btn-block btn-success" id="btnGetListCard">Get Data</button>
     </div>
   </div>
-  <br/>
-  <label for="pekerjaan">Active Date</label>
   <div class="row">
-    <div class="col-md-3">
+    <div class="col-4">
       <div class="form-group">
-        <label>Date range:</label>
-
-        <div class="input-group">
-          <div class="input-group-prepend">
-            <span class="input-group-text">
-              <i class="far fa-calendar-alt"></i>
-            </span>
-          </div>
-          <input type="text" class="form-control float-right" id="reservation">
-        </div>
-        <!-- /.input group -->
+        <label for="pekerjaan">Status</label>
+        <select class="form-control" id="inStatus" style="width: 100%;">
+          <option value="1">Active</option>
+          <option value="0">Inactive</option>
+        </select>
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group">
+        <label>Active Date</label>
+        <div class="input-group">
+          <div class="input-group-prepend">
+            <span class="input-group-text"><i class="far fa-clock"></i></span>
+          </div>
+          <input type="text" class="form-control float-right" id="reservationtime">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer row">
+    <div class="col text-center">
+      <button type="button" class="btn btn-success" id="btnGetListCard">Get Data</button>
+    </div>
+  </div>
   <br/>
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-12">
       <table id="tableListCard" class="table table-bordered table-striped">
         <thead style="text-align: center;">
           <tr>
@@ -83,6 +92,15 @@
     //Initialize Select2 Elements
     $('.select2bs4').select2({
       theme: 'bootstrap4'
+    })
+    
+    $('#reservationtime').daterangepicker({
+      timePicker: true,
+      timePickerIncrement: 30,
+      timePicker24Hour: true,
+      locale: {
+        format: 'MM/DD/YYYY hh:mm'
+      }
     })
   })
   

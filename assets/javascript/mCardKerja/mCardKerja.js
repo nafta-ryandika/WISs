@@ -103,15 +103,14 @@ function getListCard(){
 		url: base_url+"mCardKerja/C_cardKerja/getListCard",
 		cache: false,
 		dataType: 'json',
+		beforeSend: function(data){
+			swal.showLoading();
+		},
 		success: function(data) {
-			var html = '<option selected="selected"> - </option>';
-			var i;
-
-			for (i=0; i<data.length; i++) {
-				html += '<option value="' + data[i].kerja_id + '">' + data[i].kerja_name + '</option>';
-			}
-
-			$('#inPekerjaan').html(html);
+			
+		},
+		complete: function(data) {
+		
 		}
 	})
 }
